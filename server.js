@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Servir archivos estáticos desde la carpeta "frontend"
-app.use(express.static(path.join(__dirname, "../docs")));
+app.use(express.static(path.join(__dirname, "/docs")));
 
 // Conexión a la base de datos SQLite
 const db = new sqlite3.Database("./database.db");
@@ -63,12 +63,12 @@ app.get("/api/universities", (req, res) => {
 
 // Ruta para servir el archivo HTML principal
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../docs/index.html"));
+    res.sendFile(path.join(__dirname, "/docs/index.html"));
 });
 
 // Ruta para servir la página de carreras
 app.get("/area", (req, res) => {
-    res.sendFile(path.join(__dirname, "../docs/index.html"));
+    res.sendFile(path.join(__dirname, "/docs/index.html"));
 });
 
 // Iniciar el servidor
