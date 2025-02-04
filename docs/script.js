@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function loadAreas() {
     const areasList = document.getElementById("areas-list");
 
-    fetch("http://localhost:3000/api/areas")
+    fetch("https://univ-ven.onrender.com/api/areas")
         .then((response) => response.json())
         .then((areas) => {
             areas.forEach((area) => {
@@ -49,7 +49,7 @@ function loadCareers(areaId) {
     const careersList = document.getElementById("careers-list");
     const areaTitle = document.getElementById("area-title");
 
-    fetch(`http://localhost:3000/api/careers?area_id=${areaId}`)
+    fetch(`https://univ-ven.onrender.com/api/careers?area_id=${areaId}`)
         .then((response) => response.json())
         .then((careers) => {
             areaTitle.textContent = `Carreras del Área ${areaId}`;
@@ -83,7 +83,7 @@ function loadCareers(areaId) {
 
 // Cargar universidades por carrera
 function loadUniversities(careerId, parentElement) {
-    fetch(`http://localhost:3000/api/universities?career_id=${careerId}`)
+    fetch(`https://univ-ven.onrender.com/api/universities?career_id=${careerId}`)
         .then((response) => response.json())
         .then((universities) => {
             const universitiesList = document.createElement("ul");
